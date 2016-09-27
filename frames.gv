@@ -1,0 +1,7 @@
+digraph G {
+"map" -> "vicon_frame"[label="Broadcaster: /static_transform_publisher_1474801246343111382\nAverage rate: 10.178 Hz\nMost recent transform: 1474808722.147 ( -0.011 sec old)\nBuffer length: 4.814 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1474808722.136"[ shape=plaintext ] ;
+ }->"map";
+}

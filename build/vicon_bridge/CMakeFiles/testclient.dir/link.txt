@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/testclient.dir/src/ViconDataStreamSDK_CPPTest.cpp.o  -o /home/zheng/ros/devel/lib/vicon_bridge/testclient  -L/home/zheng/ros/src/vicon_bridge/vicon_sdk/Vicon_SDK_1.3_Linux/64-bit -rdynamic -lViconDataStreamSDK_CPP -lboost_thread -lpthread -Wl,-rpath,/home/zheng/ros/src/vicon_bridge/vicon_sdk/Vicon_SDK_1.3_Linux/64-bit 

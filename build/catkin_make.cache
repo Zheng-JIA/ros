@@ -1,0 +1,2 @@
+beginner_tutorials:learning_tf:vicon_bridge
+-DCATKIN_DEVEL_PREFIX=/home/zheng/ros/devel -DCMAKE_INSTALL_PREFIX=/home/zheng/ros/install -G Unix Makefiles
