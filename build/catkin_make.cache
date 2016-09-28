@@ -1,2 +1,2 @@
-beginner_tutorials:learning_tf:vicon_bridge
+beginner_tutorials:crazyflie_ros/crazyflie:crazyflie_ros/crazyflie_controller:crazyflie_ros/crazyflie_cpp:crazyflie_ros/crazyflie_demo:crazyflie_ros/crazyflie_description:crazyflie_ros/crazyflie_driver:crazyflie_ros/crazyflie_tools:learning_tf:vicon_bridge
 -DCATKIN_DEVEL_PREFIX=/home/zheng/ros/devel -DCMAKE_INSTALL_PREFIX=/home/zheng/ros/install -G Unix Makefiles

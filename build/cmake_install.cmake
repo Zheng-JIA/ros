@@ -117,7 +117,14 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unsp
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   INCLUDE("/home/zheng/ros/build/gtest/cmake_install.cmake")
+  INCLUDE("/home/zheng/ros/build/crazyflie_ros/crazyflie/cmake_install.cmake")
+  INCLUDE("/home/zheng/ros/build/crazyflie_ros/crazyflie_controller/cmake_install.cmake")
+  INCLUDE("/home/zheng/ros/build/crazyflie_ros/crazyflie_cpp/cmake_install.cmake")
+  INCLUDE("/home/zheng/ros/build/crazyflie_ros/crazyflie_demo/cmake_install.cmake")
+  INCLUDE("/home/zheng/ros/build/crazyflie_ros/crazyflie_description/cmake_install.cmake")
+  INCLUDE("/home/zheng/ros/build/crazyflie_ros/crazyflie_tools/cmake_install.cmake")
   INCLUDE("/home/zheng/ros/build/beginner_tutorials/cmake_install.cmake")
+  INCLUDE("/home/zheng/ros/build/crazyflie_ros/crazyflie_driver/cmake_install.cmake")
   INCLUDE("/home/zheng/ros/build/learning_tf/cmake_install.cmake")
   INCLUDE("/home/zheng/ros/build/vicon_bridge/cmake_install.cmake")
 

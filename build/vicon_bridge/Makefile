@@ -150,20 +150,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-vicon_bridge/CMakeFiles/_catkin_empty_exported_target.dir/rule:
-	cd /home/zheng/ros/build && $(MAKE) -f CMakeFiles/Makefile2 vicon_bridge/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : vicon_bridge/CMakeFiles/_catkin_empty_exported_target.dir/rule
-
-# Convenience name for target.
-_catkin_empty_exported_target: vicon_bridge/CMakeFiles/_catkin_empty_exported_target.dir/rule
-.PHONY : _catkin_empty_exported_target
-
-# fast build rule for target.
-_catkin_empty_exported_target/fast:
-	cd /home/zheng/ros/build && $(MAKE) -f vicon_bridge/CMakeFiles/_catkin_empty_exported_target.dir/build.make vicon_bridge/CMakeFiles/_catkin_empty_exported_target.dir/build
-.PHONY : _catkin_empty_exported_target/fast
-
-# Convenience name for target.
 vicon_bridge/CMakeFiles/_vicon_bridge_generate_messages_check_deps_Marker.dir/rule:
 	cd /home/zheng/ros/build && $(MAKE) -f CMakeFiles/Makefile2 vicon_bridge/CMakeFiles/_vicon_bridge_generate_messages_check_deps_Marker.dir/rule
 .PHONY : vicon_bridge/CMakeFiles/_vicon_bridge_generate_messages_check_deps_Marker.dir/rule
@@ -639,7 +625,6 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... _catkin_empty_exported_target"
 	@echo "... _vicon_bridge_generate_messages_check_deps_Marker"
 	@echo "... _vicon_bridge_generate_messages_check_deps_Markers"
 	@echo "... _vicon_bridge_generate_messages_check_deps_TfDistortInfo"
