@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
 import rospy
+from sensor_msgs.msg import Joy
 from visualization_msgs.msg import Marker
 from vicon_bridge.msg import Markers
+from geometry_msgs.msg import PointStamped
+from geometry_msgs.msg import Point
 import tf
 import numpy as np
 from scipy.spatial.distance import cdist
@@ -51,18 +54,18 @@ def convert_to_rviz_tf(msg, kf):
             rospy.loginfo("The number of markers is %f", num_marker)
         if num_marker == 3:
             rospy.loginfo("There are three markers")
-        br.sendTransform(pos[i], tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(), str(i)+"_marker","world")
+        #br.sendTransform(pos[i], tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(), str(i)+"_marker","world")
+        #br.sendTransform(pos[i], tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(), "crazyflie"+str(i)+"/base_link","world")
+
     pos1 = (msg.markers[0].translation.x/1000.0,
                 msg.markers[0].translation.y/1000.0,
                 msg.markers[0].translation.z/1000.0)
-    #br.sendTransform(pos1, tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(),"first_marker","world")
     if num_marker == 2: 
         pos2 = (msg.markers[1].translation.x/1000.0,
                 msg.markers[1].translation.y/1000.0,
                 msg.markers[1].translation.z/1000.0)
     else:
         pos2 = pos1
-    #br.sendTransform(pos2, tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(),"second_marker","world")
     #"""
     #--------kalman filter estimation--------# 
     if kf[0].init == False:
@@ -79,22 +82,32 @@ def convert_to_rviz_tf(msg, kf):
     if num_marker == 2 :
         kf[0].measu_update(pos1, pos2)
         kf[1].measu_update(pos1, pos2)
-    #br.sendTransform(kf[0].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"kf0_est","world")
-    #br.sendTransform(kf[1].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"kf1_est","world")
-    #"""
-    #    position2 = (msg.markers[1].translation.x/1000.0,
-    #             msg.markers[1].translation.y/1000.0,
-    #            msg.markers[1].translation.z/1000.0)
-    #br.sendTransform(position2,tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(),"second_marker","world")
-     
-    #rospy.loginfo(rospy.get_caller_id() + 'x position is %f',msg.markers[0].translation.x)
+    #br.sendTransform(kf[0].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie0/base_link","world")
+    #br.sendTransform(kf[1].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie1/base_link","world")
+
+    header = msg.header
+    point0 = Point()
+    point1 = Point()
+    point0.x = kf[0].get_pos()[0]
+    point0.y = kf[0].get_pos()[1]
+    point0.z = kf[0].get_pos()[2]
+    point1.x = kf[1].get_pos()[0]
+    point1.y = kf[1].get_pos()[1]
+    point1.z = kf[1].get_pos()[2]
+
+    msg_extPos0 = PointStamped(header=header, point=point0)
+    msg_extPos1 = PointStamped(header=header, point=point1)
+    pub_extPos0.publish(msg_extPos0)
+    pub_extPos1.publish(msg_extPos1)
 if __name__=='__main__':
     rospy.init_node('vicon_rviz_marker', anonymous=True)
     A = np.array([[1, 0.005],[0, 1]])
     k = np.array([[0.3], [0.00006]]) # 0.3 0.00006
     kf0 = kalmanFilter(A, k)
     kf1 = kalmanFilter(A, k)
-    rospy.Subscriber('vicon/markers',
+    pub_extPos0 = rospy.Publisher('crazyflie0/external_position',PointStamped,queue_size=10)
+    pub_extPos1 = rospy.Publisher('crazyflie1/external_position',PointStamped,queue_size=10)
+    rospy.Subscriber('/vicon/markers',
                     Markers,
                     convert_to_rviz_tf,
                     (kf0, kf1))
