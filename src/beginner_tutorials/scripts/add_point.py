@@ -27,8 +27,20 @@ class kalmanFilter:
         self.state_y = np.dot(self.A, self.state_y)
         self.state_z = np.dot(self.A, self.state_z)
 
-    def measu_update(self, z1, z2):
+    def measu_update(self, i, z1, z2):
         z = self.nn(z1, z2)
+        """
+        if i == 0:
+            if z1[1] < z2[1]:
+                z = z1
+            else:
+                z = z2
+        else:
+            if z1[1] < z2[1]:
+                z = z2
+            else:
+                z = z1
+        """
         self.state_x = self.state_x + np.dot(self.k, (z[0] - self.state_x[0][0]))
         self.state_y = self.state_y + np.dot(self.k, (z[1] - self.state_y[0][0]))
         self.state_z = self.state_z + np.dot(self.k, (z[2] - self.state_z[0][0]))
@@ -61,7 +73,6 @@ def convert_to_rviz_tf(msg, kf):
     for i in range(0, num_marker):
         pos.append((msg.markers[i].translation.x/1000.0, msg.markers[i].translation.y/1000.0, msg.markers[i].translation.z/1000.0))
         #br.sendTransform(pos[i], tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(), str(i)+"_marker","world")
-        #br.sendTransform(pos[i], tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(), "crazyflie"+str(i)+"/base_link","world")
 
     # save valid measurements
     if num_marker == num_quad: 
@@ -99,8 +110,8 @@ def convert_to_rviz_tf(msg, kf):
     for i in range(num_quad):
         kf[i].prior_update()
         if num_marker == num_quad :
-            kf[i].measu_update(pos0, pos1)
-        br.sendTransform(kf[i].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie"+str(i)+"/base_link","world")
+            kf[i].measu_update(i, pos0, pos1)
+        #br.sendTransform(kf[i].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie"+str(i)+"/base_link","world")
 
     header = msg.header
     point0 = Point()
