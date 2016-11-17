@@ -6,6 +6,7 @@ from visualization_msgs.msg import Marker
 from vicon_bridge.msg import Markers
 from geometry_msgs.msg import PointStamped
 from geometry_msgs.msg import Point
+from std_msgs.msg import Float32
 import cPickle
 import tf
 import numpy as np
@@ -20,8 +21,10 @@ class kalmanFilter:
         self.k = k
         self.time = rospy.get_time()
         rospy.Subscriber(joy_topic, Joy, self._joyChanged)
-        self.pub_trackedPos = rospy.Publisher('crazyflie'+str(idx)+'/trackedPos',PointStamped,queue_size=10)
-        self.pub_extPos = rospy.Publisher('crazyflie'+str(idx)+'/external_position',PointStamped,queue_size=10)
+        self.pub_trackedPos = rospy.Publisher('crazyflie'+str(idx)+'/trackedPos',PointStamped,queue_size=20)
+        global enable_dis_obs
+        if enable_dis_obs == 0:
+            self.pub_extPos = rospy.Publisher('crazyflie'+str(idx)+'/external_position',PointStamped,queue_size=10)
              
     def prior_update(self):
         now = rospy.get_time()
@@ -68,6 +71,18 @@ def convert_to_rviz_tf(msg, kf):
     if num_marker == 3:
         rospy.loginfo("The number of markers is 33333333333333333          33333333333333333           333333333333333")
     """
+    if num_marker == 1:
+        header = msg.header 
+        point = Point()
+        point.x = 0
+        state_led = PointStamped(header=header, point=point)
+        pub_state_led.publish(state_led)
+    if num_marker == 2:
+        header = msg.header
+        point = Point()
+        point.x = 1
+        state_led = PointStamped(header=header, point=point)
+        pub_state_led.publish(state_led)
     # all available measurements
     for i in range(0, num_marker):
         pos.append((msg.markers[i].translation.x/1000.0, msg.markers[i].translation.y/1000.0, msg.markers[i].translation.z/1000.0))
@@ -112,6 +127,7 @@ def convert_to_rviz_tf(msg, kf):
             kf[i].measu_update(i, pos0, pos1)
         #br.sendTransform(kf[i].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie"+str(i)+"/base_link","world") # unknown reason for affecting system
     #==================================Publish tracked positions=========================================== 
+    global enable_dis_obs
     for i in range(0, num_quad):
         header = msg.header
         point = Point()
@@ -120,38 +136,45 @@ def convert_to_rviz_tf(msg, kf):
         point.z = kf[i].get_pos()[2]
         msg_extPos = PointStamped(header=header, point=point)
         kf[i].pub_trackedPos.publish(msg_extPos)
-   
+
     #==================================Publish /crazyflie/external_position================================
-    for i in range(0, num_quad):
-        header = msg.header
-        point = Point()
-        point.x = kf[i].get_pos()[0]
-        point.y = kf[i].get_pos()[1]
-        point.z = kf[i].get_pos()[2]
-        msg_extPos = PointStamped(header=header, point=point)
-        kf[i].pub_extPos.publish(msg_extPos)
-    """
-    #scaled0 = Point()
+    if enable_dis_obs == 0:
+        for i in range(0, num_quad):
+            header = msg.header
+            point = Point()
+            point.x = kf[i].get_pos()[0]
+            point.y = kf[i].get_pos()[1]
+            point.z = kf[i].get_pos()[2]
+            msg_extPos = PointStamped(header=header, point=point)
+            kf[i].pub_extPos.publish(msg_extPos)
+    scaled0 = Point()
     #scaled1 = Point()
-    #scaled0.x = msg.markers[0].translation.x/1000.0
-    #scaled0.y = msg.markers[0].translation.y/1000.0
-    #scaled0.z = msg.markers[0].translation.z/1000.0
-    #msg_scaled0 = PointStamped(header=header, point=scaled0)
+    scaled0.x = msg.markers[0].translation.x/1000.0
+    scaled0.y = msg.markers[0].translation.y/1000.0
+    scaled0.z = msg.markers[0].translation.z/1000.0
+    msg_scaled0 = PointStamped(header=header, point=scaled0)
 
     #scaled1.x = msg.markers[1].translation.x/1000.0
     #scaled1.y = msg.markers[1].translation.y/1000.0
     #scaled1.z = msg.markers[1].translation.x/1000.0
-    #pub_vicon.publish(msg_scaled0)
-    """
+    pub_vicon.publish(msg_scaled0)
 if __name__=='__main__':
     rospy.init_node('vicon_rviz_marker', anonymous=True)
     A = np.array([[1, 0.005],[0, 1]])
     k = np.array([[0.3], [0.00006]]) # 0.3 0.00006
     joy_topic = rospy.get_param("~joy_topic", "joy")
+    enable_dis_obs = rospy.get_param("~enable_dis_obs")
+    enable_2ndQuad = rospy.get_param("~2ndQuad")
     kf0 = kalmanFilter(A, k, 0, joy_topic)
     kf1 = kalmanFilter(A, k, 1, joy_topic)
-    kf = [kf0]
+    if enable_2ndQuad == 0:
+        print("adsfadsfasdfasdfasdfasdfasdfasdfasdfasdfasdfas %d",enable_2ndQuad)
+        kf = [kf0]
+    else:
+        print("ajdlfakjdslkfajsldfjlkasdjflkajdsflkajdslfkaj  %d", enable_2ndQuad)
+        kf = [kf0,kf1]
     pub_vicon = rospy.Publisher('scaledVicon', PointStamped, queue_size=10)
+    pub_state_led = rospy.Publisher('state_led', PointStamped, queue_size=10)
     rospy.Subscriber('/vicon/markers',
                     Markers,
                     convert_to_rviz_tf,
