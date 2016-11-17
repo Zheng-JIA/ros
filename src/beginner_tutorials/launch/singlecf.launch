@@ -1,0 +1,33 @@
+
+<launch>
+    <arg name="ns" />
+    <arg name="uri" />
+    <arg name="tf_prefix" />
+    <arg name="enable_logging" />
+
+    <arg name="frame" default="base_link"/>
+    <arg name="worldFrame" default="world"/>
+
+    <node pkg="crazyflie_driver" type="crazyflie_add" name="crazyflie_add" output="screen">
+      <param name="uri" value="$(arg uri)" />
+      <param name="tf_prefix" value="$(arg tf_prefix)" />
+      <param name="enable_logging" value="$(arg enable_logging)" /> 
+      <rosparam>
+          genericLogTopics: ["state"]
+          genericLogTopicFrequencies: [10]
+          genericLogTopic_state_Variables: ["kalman.stateX", "kalman.stateY", "kalman.stateZ", "stabilizer.roll", "stabilizer.pitch", "stabilizer.yaw"]
+      </rosparam>
+    </node>
+    <node name="crazyflie_state" pkg="beginner_tutorials" type="crazyflie_state_broadcaster.py" output="screen">
+        <param name="frame" value="$(arg frame)"/>
+        <param name="worldFrame" value="$(arg worldFrame)"/>
+    </node>
+
+    <node name="basic_controller" pkg="beginner_tutorials" type="basic_controller.py" output="screen">
+        <param name="frame" value="$(arg ns)/$(arg worldFrame)"/>
+        <param name="worldFrame" value="$(arg worldFrame)" />
+        <param name="joy_topic" value="/joy" />
+        <param name="phase" value="1.57" />
+    </node>
+
+</launch>
