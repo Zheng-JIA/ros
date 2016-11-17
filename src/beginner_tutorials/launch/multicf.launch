@@ -2,20 +2,29 @@
 <launch>
   <arg name="joy_dev" default="/dev/input/js0"/>
   <arg name="frame" default="base_link" />
-  <arg name="worldFrame" default="/world" />
-  <arg name="2ndQuad" default="0" type="bool" />
+  <arg name="worldFrame" default="world" />
+  <arg name="2ndQuad" default="1" />
+  <arg name="enable_dis_obs" default="0" />
+  <arg name="enable_logging" default="False" />
   <include file="$(find crazyflie_driver)/launch/crazyflie_server.launch" />
   
   <node name="joy" pkg="joy" type="joy_node" output="screen">
       <param name="dev" value="$(arg joy_dev)" />
   </node>
 
-  <node name="add_point" pkg="beginner_tutorials" type="add_point.py" output="screen">
+  <node name="crazyflie_led_track" pkg="beginner_tutorials" type="crazyflie_led_track.py" output="screen">
+      <param name="enable_dis_obs" value="$(arg enable_dis_obs)" />
+      <param name="2ndQuad" value="$(arg 2ndQuad)" />
+  </node>
+
+  <node name="distributed_observer" pkg="beginner_tutorials" type="distributed_observer.py" output="screen" >
+      <param name="enable_dis_obs" value="$(arg enable_dis_obs)"/>
   </node>
   <group ns="crazyflie0">
     <node pkg="crazyflie_driver" type="crazyflie_add" name="crazyflie_add" output="screen">
-      <param name="uri" value="radio://0/80/2M/E7E7E7E7E3" />
+      <param name="uri" value="radio://0/80/2M/E7E7E7E7E0" />
       <param name="tf_prefix" value="crazyflie0" />
+      <param name="enable_logging" value="$(arg enable_logging)" /> 
       <rosparam>
           genericLogTopics: ["state"]
           genericLogTopicFrequencies: [10]
@@ -32,7 +41,7 @@
     -->
     <node name="crazyflie_state" pkg="beginner_tutorials" type="crazyflie_state_broadcaster.py" output="screen">
         <param name="frame" value="base_link"/>
-        <param name="worldFrame" value="/world"/>
+        <param name="worldFrame" value="world"/>
     </node>
 
     <!--<node name="vicon_to_extPos" pkg="beginner_tutorials" type="vicon_to_extPos.py" output="screen">
@@ -44,20 +53,21 @@
         <param name="phase" value="1.57" />
     </node>
   </group>
-
+<!--
   <group ns="crazyflie1" if="$(arg 2ndQuad)">
     <node pkg="crazyflie_driver" type="crazyflie_add" name="crazyflie_add" output="screen">
-      <param name="uri" value="radio://0/80/2M/E7E7E7E7E1" />
+      <param name="uri" value="radio://0/80/2M/E7E7E7E7E2" />
       <param name="tf_prefix" value="crazyflie1" />
+      <param name="enable_logging" value="$(arg enable_logging)" /> 
       <rosparam>
           genericLogTopics: ["state"]
           genericLogTopicFrequencies: [10]
           genericLogTopic_state_Variables: ["kalman.stateX", "kalman.stateY", "kalman.stateZ", "stabilizer.roll", "stabilizer.pitch", "stabilizer.yaw"]
-      </rosparam>  
+      </rosparam>
     </node>
     <node name="crazyflie_state" pkg="beginner_tutorials" type="crazyflie_state_broadcaster.py" output="screen">
         <param name="frame" value="base_link"/>
-        <param name="worldFrame" value="/world"/>
+        <param name="worldFrame" value="world"/>
     </node>
 
     <node name="basic_controller" pkg="beginner_tutorials" type="basic_controller.py" output="screen">
@@ -67,9 +77,46 @@
         <param name="phase" value="1.57" />
     </node>
   </group>
+-->
+  <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="crazyflie1">
+    <arg name="ns" value="crazyflie1"/>
+    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E2" />
+    <arg name="tf_prefix" value="crazyflie1"/>
+    <arg name="enable_logging" value="$(arg enable_logging)"/>
+    <arg name="frame" value="base_link"/>
+    <arg name="worldFrame" value="world"/>
+   </include>
   <!-- run rviz -->
   <param name="robot_description" command="$(find xacro)/xacro.py $(find crazyflie_description)/urdf/crazyflie2.urdf.xacro" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyflie_demo)/launch/crazyflie_pos.rviz" required="true" />
+  <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyflie_demo)/launch/crazyflie_pos.rviz" required="true" /> -->
  
 </launch>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
