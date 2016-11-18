@@ -32,44 +32,50 @@ def setIncidence( N, edgeList ):
     return B
 
 class distributed_observer:
-    def __init__(self, K_kal, Hn, joy_topic, enable_dis_obs):
+    def __init__(self, N, K_kal, Hn, joy_topic, enable_dis_obs):
         self.init = False
+        self.N = N
         self.K_p = K_kal[0]
         self.K_v = K_kal[1] 
         self.Hn = Hn
+        self.enable_dis_obs = enable_dis_obs
         self.pos = np.zeros((n*N,1))
         self.vel = np.zeros((n*N,1))
         self.time = rospy.get_time()
         self.joy_sub = rospy.Subscriber(joy_topic, Joy, self._joyChanged)
-        self.trackedPos_sub = ApproximateTimeSynchronizer([Subscriber("/crazyflie0/trackedPos",PointStamped),Subscriber("/crazyflie1/trackedPos",PointStamped)],queue_size=2, slop=0.001)
+        self.subscribers = []
+        for i in range (0, N):
+            subscriber = Subscriber("/crazyflie"+str(i)+"/trackedPos",PointStamped) 
+            self.subscribers.append(subscriber)
+        self.trackedPos_sub = ApproximateTimeSynchronizer(self.subscribers,queue_size=2, slop=0.001)
         self.trackedPos_sub.registerCallback(self.estimate)
-        if enable_dis_obs == 0:
-            self.estPos_pub0 = rospy.Publisher("/crazyflie0/estPos",PointStamped,queue_size=10)
-            self.estPos_pub1 = rospy.Publisher("/crazyflie1/estPos",PointStamped,queue_size=10)
-        else:
-            self.estPos_pub0 = rospy.Publisher("/crazyflie0/external_position",PointStamped,queue_size=10)
-            self.estPos_pub1 = rospy.Publisher("/crazyflie1/external_position",PointStamped,queue_size=10)
 
-    def estimate(self, msg0, msg1):
-        pos0 = (msg0.point.x, msg0.point.y, msg0.point.z)
-        pos1 = (msg1.point.x, msg1.point.y, msg1.point.z)
-        pos = np.concatenate((pos0,pos1),axis=0)
+        self.ext_publishers = []
+        for i in range(0, N):
+            if enable_dis_obs == 0:
+                publisher = rospy.Publisher("/crazyflie"+str(i)+"/estPos",PointStamped,queue_size=10)
+            else:
+                publisher = rospy.Publisher("/crazyflie"+str(i)+"/external_position",PointStamped,queue_size=10)
+            self.ext_publishers.append(publisher) 
+
+    def estimate(self, *messages):
+        pos = []
+        for msg in messages:
+            pos = np.concatenate((pos, (msg.point.x, msg.point.y, msg.point.z)),axis=0)
         z = np.dot(self.Hn, pos) 
+        z = np.expand_dims(z, axis=1)
         self.prior_update()
         self.measu_update(z)
-        header = msg0.header
-        point = Point()
-        point.x = pos0[0]
-        point.y = pos0[1]
-        point.z = pos0[2]
-        msg_estPos = PointStamped(header=header, point=point)
-        self.estPos_pub0.publish(msg_estPos)
-        header = msg1.header
-        point.x = pos1[0]
-        point.y = pos1[1]
-        point.z = pos1[2]
-        msg_estPos = PointStamped(header=header, point=point)
-        self.estPos_pub1.publish(msg_estPos)
+
+        for i in range(0, self.N):
+            header = messages[i].header
+            point = Point()
+            point.x = self.pos[3*i]
+            point.y = self.pos[3*i+1]
+            point.z = self.pos[3*i+2]
+
+            msg_estPos = PointStamped(header=header, point=point)
+            self.ext_publishers[i].publish(msg_estPos)
 
     def prior_update(self):
         now = rospy.get_time()
@@ -87,17 +93,21 @@ class distributed_observer:
         for i in range(0, len(data.buttons)):
             if i == 11 and data.buttons[i] == 1:
                 self.init = False
-
-
+                self.pos = np.zeros((n*N,1))
+                self.vel = np.zeros((n*N,1))
 
 if __name__=='__main__':
     rospy.init_node('distributed_observer', anonymous=True)
     joy_topic = rospy.get_param("~joy_topic", "joy") 
     enable_dis_obs = rospy.get_param("~enable_dis_obs")
+    # dimension
     n = 3
-    N = 2 
+    # num of quads
+    N = rospy.get_param("~num_quad") 
         
-    edgeList = [(0,1)]
+    edgeList = [(0,1),
+                (1,2),
+                (2,3)]
     W = setGraph(N, edgeList)
     Dout = np.diag(np.sum(W, axis=1))
     L = Dout - W 
@@ -106,13 +116,14 @@ if __name__=='__main__':
     idx_ap = [0]
     E = np.identity(N)[:,idx_ap]
     H = np.concatenate((B.T, E.T), axis=0)
+
     In = np.identity(n)
     Hn = np.kron(H, In)     
     # gains
     kalman_p = 0.17*2
-    kalman_v = 1*kalman_p
+    kalman_v = 0.1*kalman_p
     kalman_abs = 1.0
-    kalman_rel = 0.8*kalman_abs
+    kalman_rel = 1.0*kalman_abs
 
     # estimator matrix
     K_kalp = np.concatenate((kalman_rel*B, kalman_abs*E), axis=1)
@@ -120,7 +131,7 @@ if __name__=='__main__':
     K_kal = [kalman_p*K_kalp, 
              kalman_v*K_kalp]
 
-    observer = distributed_observer(K_kal, Hn, joy_topic, enable_dis_obs)
+    observer = distributed_observer(N, K_kal, Hn, joy_topic, enable_dis_obs)
     rospy.spin()    
 
 
