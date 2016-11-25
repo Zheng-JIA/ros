@@ -3,12 +3,18 @@
   <arg name="joy_dev" default="/dev/input/js0"/>
   <arg name="frame" default="base_link" />
   <arg name="worldFrame" default="world" />
-  <arg name="2ndQuad" default="1" />
-  <arg name="enable_dis_obs" default="0" />
+  <arg name="num_quad" value="1"/>
+  <arg name="enable_cf0" value="1" />
+  <arg name="enable_cf1" value="0" />
+  <arg name="enable_cf2" value="0" />
+  <arg name="enable_cf3" value="0" />
+  <arg name="enable_dis_obs" default="False" />
   <arg name="enable_logging" default="False" />
 
   <arg name="ns0" value="crazyflie0" />
   <arg name="ns1" value="crazyflie1" /> 
+  <arg name="ns2" value="crazyflie2" /> 
+  <arg name="ns3" value="crazyflie3" />
   <include file="$(find crazyflie_driver)/launch/crazyflie_server.launch" />
   
   <node name="joy" pkg="joy" type="joy_node" output="screen">
@@ -17,15 +23,20 @@
 
   <node name="crazyflie_led_track" pkg="beginner_tutorials" type="crazyflie_led_track.py" output="screen">
       <param name="enable_dis_obs" value="$(arg enable_dis_obs)" />
-      <param name="2ndQuad" value="$(arg 2ndQuad)" />
+      <param name="num_quad" value="$(arg num_quad)" />
   </node>
 
   <node name="distributed_observer" pkg="beginner_tutorials" type="distributed_observer.py" output="screen" >
       <param name="enable_dis_obs" value="$(arg enable_dis_obs)"/>
+      <param name="num_quad" value="$(arg num_quad)" />
+      <param name="ns0" value="$(arg ns0)" />
+      <param name="ns1" value="$(arg ns1)" /> 
+      <param name="ns2" value="$(arg ns2)" /> 
+      <param name="ns3" value="$(arg ns3)" />
   </node>
 
   
- <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns0)">
+ <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns0)" if="$(arg enable_cf0)">
     <arg name="ns" value="$(arg ns0)"/>
     <arg name="uri" value="radio://0/80/2M/E7E7E7E7E0" />
     <arg name="tf_prefix" value="$(arg ns0)"/>
@@ -33,10 +44,26 @@
     <arg name="frame" value="base_link"/>
     <arg name="worldFrame" value="world"/>
  </include>
- <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns1)">
-    <arg name="ns" value="$(arg ns0)"/>
-    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E2" />
+ <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns1)" if="$(arg enable_cf1)">
+    <arg name="ns" value="$(arg ns1)"/>
+    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E1" />
     <arg name="tf_prefix" value="$(arg ns1)"/>
+    <arg name="enable_logging" value="$(arg enable_logging)"/>
+    <arg name="frame" value="base_link"/>
+    <arg name="worldFrame" value="world"/>
+   </include>
+ <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns2)" if="$(arg enable_cf2)">
+    <arg name="ns" value="$(arg ns2)"/>
+    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E2" />
+    <arg name="tf_prefix" value="$(arg ns2)"/>
+    <arg name="enable_logging" value="$(arg enable_logging)"/>
+    <arg name="frame" value="base_link"/>
+    <arg name="worldFrame" value="world"/>
+   </include>
+  <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns3)" if="$(arg enable_cf3)">
+    <arg name="ns" value="$(arg ns3)"/>
+    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E3" />
+    <arg name="tf_prefix" value="$(arg ns3)"/>
     <arg name="enable_logging" value="$(arg enable_logging)"/>
     <arg name="frame" value="base_link"/>
     <arg name="worldFrame" value="world"/>
@@ -45,31 +72,8 @@
   <param name="robot_description" command="$(find xacro)/xacro.py $(find crazyflie_description)/urdf/crazyflie2.urdf.xacro" />
   <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyflie_demo)/launch/crazyflie_pos.rviz" required="true" /> -->
  
+  <include file="$(find vicon_bridge)/launch/vicon.launch" />
 </launch>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

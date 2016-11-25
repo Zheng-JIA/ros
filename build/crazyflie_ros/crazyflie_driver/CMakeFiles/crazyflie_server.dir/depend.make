@@ -18,6 +18,8 @@ crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_ser
 crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /home/zheng/ros/src/crazyflie_ros/crazyflie_driver/src/crazyflie_server.cpp
 crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /opt/ros/indigo/include/XmlRpcDecl.h
 crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /opt/ros/indigo/include/XmlRpcValue.h
+crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /opt/ros/indigo/include/geometry_msgs/Point.h
+crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /opt/ros/indigo/include/geometry_msgs/PointStamped.h
 crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /opt/ros/indigo/include/geometry_msgs/Quaternion.h
 crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /opt/ros/indigo/include/geometry_msgs/Twist.h
 crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_server.cpp.o: /opt/ros/indigo/include/geometry_msgs/Vector3.h

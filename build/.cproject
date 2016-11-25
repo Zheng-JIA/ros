@@ -1,0 +1,1689 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?><cproject>
+	<storageModule moduleId="org.eclipse.cdt.core.settings">
+		<cconfiguration id="org.eclipse.cdt.core.default.config.1">
+			<storageModule buildSystemId="org.eclipse.cdt.core.defaultConfigDataProvider" id="org.eclipse.cdt.core.default.config.1" moduleId="org.eclipse.cdt.core.settings" name="Configuration">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+					<extension id="org.eclipse.cdt.core.GNU_ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.language.mapping">
+				<project-mappings/>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+	</storageModule>
+	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+		<project id="Project.null.1" name="Project"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets">
+		<buildTargets>
+			<target name=": clean_test_results" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean_test_results</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": download_extra_data" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>download_extra_data</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": doxygen" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>doxygen</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": install" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>install</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": install/local" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>install/local</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": install/strip" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>install/strip</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": list_install_components" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>list_install_components</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": rebuild_cache" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>rebuild_cache</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": run_tests" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>run_tests</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": test" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>test</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": tests" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tests</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] gtest" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>gtest</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] gtest/fast" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>gtest/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[lib] gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>gtest</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[lib] gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/gtest" "/usr/bin/cmake" -P "CMakeFiles/gtest.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] gtest_main" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>gtest_main</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] gtest_main/fast" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>gtest_main/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[lib] gtest_main" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>gtest_main</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[lib] gtest_main" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/gtest" "/usr/bin/cmake" -P "CMakeFiles/gtest_main.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/gtest-all.cc.o" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/gtest-all.cc.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/gtest-all.cc.i" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/gtest-all.cc.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/gtest-all.cc.s" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/gtest-all.cc.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/gtest_main.cc.o" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/gtest_main.cc.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/gtest_main.cc.i" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/gtest_main.cc.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/gtest_main.cc.s" path="gtest" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/gtest_main.cc.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _catkin_empty_exported_target" path="crazyflie_ros/crazyflie" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_catkin_empty_exported_target</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="crazyflie_ros/crazyflie" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="crazyflie_ros/crazyflie" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": actionlib_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>actionlib_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": actionlib_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>actionlib_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": actionlib_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>actionlib_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": actionlib_msgs_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>actionlib_msgs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": actionlib_msgs_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>actionlib_msgs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": actionlib_msgs_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>actionlib_msgs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] crazyflie_controller" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_controller</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] crazyflie_controller/fast" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_controller/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>crazyflie_controller</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_controller" "/usr/bin/cmake" -P "CMakeFiles/crazyflie_controller.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": geometry_msgs_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>geometry_msgs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": geometry_msgs_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>geometry_msgs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": geometry_msgs_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>geometry_msgs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": roscpp_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>roscpp_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": roscpp_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>roscpp_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": roscpp_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>roscpp_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": rosgraph_msgs_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>rosgraph_msgs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": rosgraph_msgs_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>rosgraph_msgs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": rosgraph_msgs_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>rosgraph_msgs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": sensor_msgs_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>sensor_msgs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": sensor_msgs_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>sensor_msgs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": sensor_msgs_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>sensor_msgs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": std_msgs_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>std_msgs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": std_msgs_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>std_msgs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": std_msgs_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>std_msgs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": tf2_msgs_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf2_msgs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": tf2_msgs_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf2_msgs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": tf2_msgs_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf2_msgs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": tf_generate_messages_cpp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": tf_generate_messages_lisp" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": tf_generate_messages_py" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/controller.cpp.o" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/controller.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/controller.cpp.i" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/controller.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/controller.cpp.s" path="crazyflie_ros/crazyflie_controller" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/controller.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] crazyflie_cpp" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] crazyflie_cpp/fast" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_cpp/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[lib] crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>crazyflie_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[lib] crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_cpp" "/usr/bin/cmake" -P "CMakeFiles/crazyflie_cpp.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/Crazyflie.cpp.o" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/Crazyflie.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/Crazyflie.cpp.i" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/Crazyflie.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/Crazyflie.cpp.s" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/Crazyflie.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/Crazyradio.cpp.o" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/Crazyradio.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/Crazyradio.cpp.i" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/Crazyradio.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/Crazyradio.cpp.s" path="crazyflie_ros/crazyflie_cpp" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/Crazyradio.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="crazyflie_ros/crazyflie_demo" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="crazyflie_ros/crazyflie_demo" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="crazyflie_ros/crazyflie_description" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="crazyflie_ros/crazyflie_description" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] listLogVariables" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>listLogVariables</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] listLogVariables/fast" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>listLogVariables/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] listLogVariables" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>listLogVariables</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] listLogVariables" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_tools" "/usr/bin/cmake" -P "CMakeFiles/listLogVariables.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] listParams" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>listParams</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] listParams/fast" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>listParams/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] listParams" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>listParams</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] listParams" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_tools" "/usr/bin/cmake" -P "CMakeFiles/listParams.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] reboot" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>reboot</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] reboot/fast" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>reboot/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] reboot" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>reboot</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] reboot" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_tools" "/usr/bin/cmake" -P "CMakeFiles/reboot.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] scan" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>scan</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] scan/fast" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>scan/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] scan" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>scan</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] scan" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_tools" "/usr/bin/cmake" -P "CMakeFiles/scan.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/listLogVariables.cpp.o" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listLogVariables.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/listLogVariables.cpp.i" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listLogVariables.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/listLogVariables.cpp.s" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listLogVariables.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/listParams.cpp.o" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listParams.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/listParams.cpp.i" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listParams.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/listParams.cpp.s" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listParams.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/reboot.cpp.o" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/reboot.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/reboot.cpp.i" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/reboot.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/reboot.cpp.s" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/reboot.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/scan.cpp.o" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/scan.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/scan.cpp.i" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/scan.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/scan.cpp.s" path="crazyflie_ros/crazyflie_tools" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/scan.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _beginner_tutorials_generate_messages_check_deps_AddTwoInts" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_beginner_tutorials_generate_messages_check_deps_AddTwoInts</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _beginner_tutorials_generate_messages_check_deps_Num" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_beginner_tutorials_generate_messages_check_deps_Num</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": beginner_tutorials_gencpp" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>beginner_tutorials_gencpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": beginner_tutorials_generate_messages" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>beginner_tutorials_generate_messages</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": beginner_tutorials_generate_messages_cpp" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>beginner_tutorials_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": beginner_tutorials_generate_messages_lisp" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>beginner_tutorials_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": beginner_tutorials_generate_messages_py" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>beginner_tutorials_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": beginner_tutorials_genlisp" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>beginner_tutorials_genlisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": beginner_tutorials_genpy" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>beginner_tutorials_genpy</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] listener" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>listener</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] listener/fast" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>listener/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] listener" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>listener</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] listener" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/beginner_tutorials" "/usr/bin/cmake" -P "CMakeFiles/listener.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] talker" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>talker</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] talker/fast" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>talker/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] talker" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>talker</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] talker" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/beginner_tutorials" "/usr/bin/cmake" -P "CMakeFiles/talker.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/listener.cpp.o" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listener.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/listener.cpp.i" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listener.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/listener.cpp.s" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/listener.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/talker.cpp.o" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/talker.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/talker.cpp.i" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/talker.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/talker.cpp.s" path="beginner_tutorials" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/talker.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _crazyflie_driver_generate_messages_check_deps_AddCrazyflie" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_crazyflie_driver_generate_messages_check_deps_AddCrazyflie</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _crazyflie_driver_generate_messages_check_deps_GenericLogData" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_crazyflie_driver_generate_messages_check_deps_GenericLogData</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _crazyflie_driver_generate_messages_check_deps_LogBlock" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_crazyflie_driver_generate_messages_check_deps_LogBlock</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _crazyflie_driver_generate_messages_check_deps_RemoveCrazyflie" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_crazyflie_driver_generate_messages_check_deps_RemoveCrazyflie</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _crazyflie_driver_generate_messages_check_deps_UpdateParams" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_crazyflie_driver_generate_messages_check_deps_UpdateParams</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] crazyflie_add" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_add</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] crazyflie_add/fast" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_add/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] crazyflie_add" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>crazyflie_add</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] crazyflie_add" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_driver" "/usr/bin/cmake" -P "CMakeFiles/crazyflie_add.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": crazyflie_driver_gencpp" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_driver_gencpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": crazyflie_driver_generate_messages" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_driver_generate_messages</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": crazyflie_driver_generate_messages_cpp" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_driver_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": crazyflie_driver_generate_messages_lisp" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_driver_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": crazyflie_driver_generate_messages_py" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_driver_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": crazyflie_driver_genlisp" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_driver_genlisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": crazyflie_driver_genpy" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_driver_genpy</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] crazyflie_server" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_server</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] crazyflie_server/fast" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>crazyflie_server/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] crazyflie_server" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>crazyflie_server</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] crazyflie_server" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/crazyflie_ros/crazyflie_driver" "/usr/bin/cmake" -P "CMakeFiles/crazyflie_server.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/crazyflie_add.cpp.o" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/crazyflie_add.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/crazyflie_add.cpp.i" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/crazyflie_add.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/crazyflie_add.cpp.s" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/crazyflie_add.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/crazyflie_server.cpp.o" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/crazyflie_server.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/crazyflie_server.cpp.i" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/crazyflie_server.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/crazyflie_server.cpp.s" path="crazyflie_ros/crazyflie_driver" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/crazyflie_server.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": std_srvs_generate_messages_cpp" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>std_srvs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": std_srvs_generate_messages_lisp" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>std_srvs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": std_srvs_generate_messages_py" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>std_srvs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": turtlesim_generate_messages_cpp" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>turtlesim_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": turtlesim_generate_messages_lisp" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>turtlesim_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": turtlesim_generate_messages_py" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>turtlesim_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="learning_tf" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _vicon_bridge_generate_messages_check_deps_Marker" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_vicon_bridge_generate_messages_check_deps_Marker</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _vicon_bridge_generate_messages_check_deps_Markers" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_vicon_bridge_generate_messages_check_deps_Markers</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _vicon_bridge_generate_messages_check_deps_TfDistortInfo" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_vicon_bridge_generate_messages_check_deps_TfDistortInfo</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _vicon_bridge_generate_messages_check_deps_viconCalibrateSegment" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_vicon_bridge_generate_messages_check_deps_viconCalibrateSegment</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": _vicon_bridge_generate_messages_check_deps_viconGrabPose" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>_vicon_bridge_generate_messages_check_deps_viconGrabPose</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] calibrate" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>calibrate</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] calibrate/fast" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>calibrate/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] calibrate" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>calibrate</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] calibrate" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/vicon_bridge" "/usr/bin/cmake" -P "CMakeFiles/calibrate.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": diagnostic_msgs_generate_messages_cpp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>diagnostic_msgs_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": diagnostic_msgs_generate_messages_lisp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>diagnostic_msgs_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": diagnostic_msgs_generate_messages_py" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>diagnostic_msgs_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": dynamic_reconfigure_gencfg" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>dynamic_reconfigure_gencfg</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": dynamic_reconfigure_generate_messages_cpp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>dynamic_reconfigure_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": dynamic_reconfigure_generate_messages_lisp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>dynamic_reconfigure_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": dynamic_reconfigure_generate_messages_py" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>dynamic_reconfigure_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] msvc_bridge" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>msvc_bridge</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[lib] msvc_bridge/fast" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>msvc_bridge/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[lib] msvc_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>msvc_bridge</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[lib] msvc_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/vicon_bridge" "/usr/bin/cmake" -P "CMakeFiles/msvc_bridge.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] testclient" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>testclient</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] testclient/fast" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>testclient/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] testclient" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>testclient</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] testclient" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/vicon_bridge" "/usr/bin/cmake" -P "CMakeFiles/testclient.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] tf_distort" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf_distort</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] tf_distort/fast" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>tf_distort/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] tf_distort" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>tf_distort</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] tf_distort" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/vicon_bridge" "/usr/bin/cmake" -P "CMakeFiles/tf_distort.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] vicon_bridge" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[exe] vicon_bridge/fast" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge/fast</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Build" path="[Targets]/[exe] vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments>-C "/home/zheng/ros/build" </buildArguments>
+				<buildTarget>vicon_bridge</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="Clean" path="[Targets]/[exe] vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/cmake</buildCommand>
+				<buildArguments>-E chdir "/home/zheng/ros/build/vicon_bridge" "/usr/bin/cmake" -P "CMakeFiles/vicon_bridge.dir/cmake_clean.cmake"</buildArguments>
+				<buildTarget/>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_gencfg" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_gencfg</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_gencpp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_gencpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_generate_messages" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_generate_messages</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_generate_messages_cpp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_generate_messages_cpp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_generate_messages_lisp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_generate_messages_lisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_generate_messages_py" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_generate_messages_py</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_genlisp" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_genlisp</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": vicon_bridge_genpy" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>vicon_bridge_genpy</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": all" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>all</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name=": clean" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>clean</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/ViconDataStreamSDK_CPPTest.cpp.o" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/ViconDataStreamSDK_CPPTest.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/ViconDataStreamSDK_CPPTest.cpp.i" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/ViconDataStreamSDK_CPPTest.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/ViconDataStreamSDK_CPPTest.cpp.s" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/ViconDataStreamSDK_CPPTest.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/calibrate_segment.cpp.o" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/calibrate_segment.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/calibrate_segment.cpp.i" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/calibrate_segment.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/calibrate_segment.cpp.s" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/calibrate_segment.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/msvc_bridge.cpp.o" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/msvc_bridge.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/msvc_bridge.cpp.i" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/msvc_bridge.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/msvc_bridge.cpp.s" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/msvc_bridge.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/tf_distort.cpp.o" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/tf_distort.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/tf_distort.cpp.i" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/tf_distort.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/tf_distort.cpp.s" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/tf_distort.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[obj] src/vicon_bridge.cpp.o" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/vicon_bridge.cpp.o</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[pre] src/vicon_bridge.cpp.i" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/vicon_bridge.cpp.i</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+			<target name="[to asm] src/vicon_bridge.cpp.s" path="vicon_bridge" targetID="org.eclipse.cdt.make.MakeTargetBuilder">
+				<buildCommand>/usr/bin/make</buildCommand>
+				<buildArguments/>
+				<buildTarget>src/vicon_bridge.cpp.s</buildTarget>
+				<stopOnError>true</stopOnError>
+				<useDefaultCommand>false</useDefaultCommand>
+			</target>
+		</buildTargets>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+		<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+			<buildOutputProvider>
+				<openAction enabled="true" filePath=""/>
+				<parser enabled="true"/>
+			</buildOutputProvider>
+			<scannerInfoProvider id="specsFile">
+				<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="/usr/bin/cc" useDefault="true"/>
+				<parser enabled="true"/>
+			</scannerInfoProvider>
+		</profile>
+		<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+			<buildOutputProvider>
+				<openAction enabled="true" filePath=""/>
+				<parser enabled="true"/>
+			</buildOutputProvider>
+			<scannerInfoProvider id="makefileGenerator">
+				<runAction arguments="-f ${project_name}_scd.mk" command="/usr/bin/make" useDefault="true"/>
+				<parser enabled="true"/>
+			</scannerInfoProvider>
+		</profile>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.pathentry">
+		<pathentry kind="src" path="[Source directory]"/>
+		<pathentry excluding="[Source directory]/|**/CMakeFiles/" kind="out" path=""/>
+		<pathentry kind="mac" name="ROS_BUILD_SHARED_LIBS" path="" value="1"/>
+		<pathentry kind="mac" name="ROS_PACKAGE_NAME" path="" value="&quot;crazyflie_controller&quot;"/>
+		<pathentry kind="mac" name="ROSCONSOLE_BACKEND_LOG4CXX" path="" value=""/>
+		<pathentry include="/usr/src/gtest/include" kind="inc" path="" system="true"/>
+		<pathentry include="/usr/src/gtest" kind="inc" path="" system="true"/>
+		<pathentry include="/opt/ros/indigo/include" kind="inc" path="" system="true"/>
+		<pathentry include="/home/zheng/ros/src/crazyflie_ros/crazyflie_cpp/include/crazyflie_cpp" kind="inc" path="" system="true"/>
+		<pathentry include="/home/zheng/ros/src/crazyflie_ros/crazyflie_cpp/include" kind="inc" path="" system="true"/>
+		<pathentry include="/home/zheng/ros/devel/include" kind="inc" path="" system="true"/>
+		<pathentry include="/home/zheng/ros/src/beginner_tutorials/include" kind="inc" path="" system="true"/>
+		<pathentry include="/home/zheng/ros/src/vicon_bridge/src" kind="inc" path="" system="true"/>
+		<pathentry include="/home/zheng/ros/src/vicon_bridge/vicon_sdk/Vicon_SDK_1.3_Linux/64-bit" kind="inc" path="" system="true"/>
+	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+</cproject>

@@ -19,6 +19,8 @@ crazyflie_ros/crazyflie_driver/CMakeFiles/crazyflie_server.dir/src/crazyflie_ser
  /home/zheng/ros/src/crazyflie_ros/crazyflie_driver/src/crazyflie_server.cpp
  /opt/ros/indigo/include/XmlRpcDecl.h
  /opt/ros/indigo/include/XmlRpcValue.h
+ /opt/ros/indigo/include/geometry_msgs/Point.h
+ /opt/ros/indigo/include/geometry_msgs/PointStamped.h
  /opt/ros/indigo/include/geometry_msgs/Quaternion.h
  /opt/ros/indigo/include/geometry_msgs/Twist.h
  /opt/ros/indigo/include/geometry_msgs/Vector3.h

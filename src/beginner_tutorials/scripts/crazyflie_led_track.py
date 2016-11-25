@@ -35,8 +35,8 @@ class kalmanFilter:
         self.state_y = np.dot(self.A, self.state_y)
         self.state_z = np.dot(self.A, self.state_z)
 
-    def measu_update(self, i, z1, z2):
-        z = self.nn(z1, z2)
+    def measu_update(self, pos):
+        z = self.nn(pos)
         self.state_x = self.state_x + np.dot(self.k, (z[0] - self.state_x[0][0]))
         self.state_y = self.state_y + np.dot(self.k, (z[1] - self.state_y[0][0]))
         self.state_z = self.state_z + np.dot(self.k, (z[2] - self.state_z[0][0]))
@@ -44,11 +44,10 @@ class kalmanFilter:
     def get_pos(self):
         return (self.state_x[0][0], self.state_y[0][0], self.state_z[0][0])
 
-    def nn(self, z1, z2):
-        dist = cdist([self.get_pos()], [z1, z2], 'euclidean')
+    def nn(self, pos):
+        dist = cdist([self.get_pos()], pos, 'euclidean')
         idx = np.argmin(dist) 
-        z = (z1, z2)  
-        return z[idx] 
+        return pos[idx] 
     
     def _joyChanged(self, data):
         for i in range(0, len(data.buttons)):
@@ -61,6 +60,7 @@ def convert_to_rviz_tf(msg, kf):
     num_quad = len(kf) 
     num_marker = len(msg.markers)
     pos = []
+    pos_all = []
     """
     if num_marker == 0:
         rospy.loginfo("The number of markers is 0")
@@ -71,13 +71,13 @@ def convert_to_rviz_tf(msg, kf):
     if num_marker == 3:
         rospy.loginfo("The number of markers is 33333333333333333          33333333333333333           333333333333333")
     """
-    if num_marker == 1:
+    if num_marker == 3:
         header = msg.header 
         point = Point()
         point.x = 0
         state_led = PointStamped(header=header, point=point)
         pub_state_led.publish(state_led)
-    if num_marker == 2:
+    if num_marker == 4:
         header = msg.header
         point = Point()
         point.x = 1
@@ -85,47 +85,29 @@ def convert_to_rviz_tf(msg, kf):
         pub_state_led.publish(state_led)
     # all available measurements
     for i in range(0, num_marker):
-        pos.append((msg.markers[i].translation.x/1000.0, msg.markers[i].translation.y/1000.0, msg.markers[i].translation.z/1000.0))
-        #br.sendTransform(pos[i], tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(), str(i)+"_marker","world")
+        pos_all.append((msg.markers[i].translation.x/1000.0, msg.markers[i].translation.y/1000.0, msg.markers[i].translation.z/1000.0))
+        #br.sendTransform(pos_all[i], tf.transformations.quaternion_from_euler(0,0,0),rospy.Time.now(), str(i)+"_marker","world")
 
     # save valid measurements
     if num_marker == num_quad: 
-        pos0 = (msg.markers[0].translation.x/1000.0, msg.markers[0].translation.y/1000.0, msg.markers[0].translation.z/1000.0)
-        pos1 = pos0
-        if num_quad == 2:
-            pos1 = (msg.markers[1].translation.x/1000.0, msg.markers[1].translation.y/1000.0, msg.markers[1].translation.z/1000.0)
-
-    #--------kalman filter estimation--------# 
-    if kf[0].init == False and num_marker==num_quad:
-        if num_quad == 1:
-            kf[0].state_x = np.array([[pos0[0]], [0]])
-            kf[0].state_y = np.array([[pos0[1]], [0]])
-            kf[0].state_z = np.array([[pos0[2]], [0]])
-            kf[0].init = True
-             
-        if num_quad == 2:
-            if pos1[1] > pos0[1]:
-                kf[0].state_x = np.array([[pos0[0]], [0]])
-                kf[0].state_y = np.array([[pos0[1]], [0]])
-                kf[0].state_z = np.array([[pos0[2]], [0]])
-                kf[1].state_x = np.array([[pos1[0]], [0]])
-                kf[1].state_y = np.array([[pos1[1]], [0]])
-                kf[1].state_z = np.array([[pos1[2]], [0]])
-            else:
-                kf[0].state_x = np.array([[pos1[0]], [0]])
-                kf[0].state_y = np.array([[pos1[1]], [0]])
-                kf[0].state_z = np.array([[pos1[2]], [0]])
-                kf[1].state_x = np.array([[pos0[0]], [0]])
-                kf[1].state_y = np.array([[pos0[1]], [0]])
-                kf[1].state_z = np.array([[pos0[2]], [0]])
-        
-            kf[0].init = True
-            kf[1].init = True
+        for i in range(0, num_marker):
+            pos.append((msg.markers[i].translation.x/1000.0, msg.markers[i].translation.y/1000.0, msg.markers[i].translation.z/1000.0))
+        pos = np.asarray(pos)
+    # kalman filter
     for i in range(num_quad):
+        # initialization 
+        if kf[i].init == False and num_marker == num_quad:
+            pos = pos[np.argsort(pos[:,1])]
+            kf[i].state_x = np.array([[ pos[i][0] ], [0]])
+            kf[i].state_y = np.array([[ pos[i][1] ], [0]])
+            kf[i].state_z = np.array([[ pos[i][2] ], [0]])
+            kf[i].init = True
+        # prior update
         kf[i].prior_update()
-        if num_marker == num_quad :
-            kf[i].measu_update(i, pos0, pos1)
-        #br.sendTransform(kf[i].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie"+str(i)+"/base_link","world") # unknown reason for affecting system
+        # measurement update
+        if num_marker == num_quad:
+            kf[i].measu_update(pos)
+        br.sendTransform(kf[i].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie"+str(i)+"/base_link","world") # unknown reason for affecting system
     #==================================Publish tracked positions=========================================== 
     global enable_dis_obs
     for i in range(0, num_quad):
@@ -164,15 +146,11 @@ if __name__=='__main__':
     k = np.array([[0.3], [0.00006]]) # 0.3 0.00006
     joy_topic = rospy.get_param("~joy_topic", "joy")
     enable_dis_obs = rospy.get_param("~enable_dis_obs")
-    enable_2ndQuad = rospy.get_param("~2ndQuad")
-    kf0 = kalmanFilter(A, k, 0, joy_topic)
-    kf1 = kalmanFilter(A, k, 1, joy_topic)
-    if enable_2ndQuad == 0:
-        print("adsfadsfasdfasdfasdfasdfasdfasdfasdfasdfasdfas %d",enable_2ndQuad)
-        kf = [kf0]
-    else:
-        print("ajdlfakjdslkfajsldfjlkasdjflkajdsflkajdslfkaj  %d", enable_2ndQuad)
-        kf = [kf0,kf1]
+    num_quad = rospy.get_param("~num_quad")
+    kf = []
+    for i in range(0, num_quad):
+        kf.append(kalmanFilter(A, k, i, joy_topic))
+    
     pub_vicon = rospy.Publisher('scaledVicon', PointStamped, queue_size=10)
     pub_state_led = rospy.Publisher('state_led', PointStamped, queue_size=10)
     rospy.Subscriber('/vicon/markers',

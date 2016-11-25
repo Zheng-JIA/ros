@@ -104,30 +104,37 @@ if __name__=='__main__':
     n = 3
     # num of quads
     N = rospy.get_param("~num_quad") 
-        
-    edgeList = [(0,1),
-                (1,2),
-                (2,3)]
+    if N == 4:        
+        edgeList = [(0,1),
+                    (1,2),
+                    (2,3)]
+    else:
+        edgeList = []
+
     W = setGraph(N, edgeList)
     Dout = np.diag(np.sum(W, axis=1))
     L = Dout - W 
     B = setIncidence(N, edgeList)
 
-    idx_ap = [0]
+    if N == 4:
+        idx_ap = [0,3]
+    else:
+        idx_ap = [0]
     E = np.identity(N)[:,idx_ap]
     H = np.concatenate((B.T, E.T), axis=0)
 
     In = np.identity(n)
     Hn = np.kron(H, In)     
     # gains
-    kalman_p = 0.17*2
-    kalman_v = 0.1*kalman_p
+    kalman_p = 0.8
+    kalman_v = 2*kalman_p
     kalman_abs = 1.0
-    kalman_rel = 1.0*kalman_abs
+    kalman_rel = kalman_abs
 
     # estimator matrix
-    K_kalp = np.concatenate((kalman_rel*B, kalman_abs*E), axis=1)
-    K_kalp = np.kron(K_kalp, In)
+    _K_kalp = np.concatenate((kalman_rel*B, kalman_abs*E), axis=1)
+    _K_kalp = np.dot(np.diag(1/np.sum(np.abs(_K_kalp),axis=1)),_K_kalp)
+    K_kalp = np.kron(_K_kalp, In)
     K_kal = [kalman_p*K_kalp, 
              kalman_v*K_kalp]
 

@@ -61,7 +61,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -288,13 +288,19 @@ actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
 actionlib_msgs_DIR:PATH=/opt/ros/indigo/share/actionlib_msgs/cmake
 
 //Value Computed by CMake
-beginner_tutorials_BINARY_DIR:STATIC=/home/zheng/ros/build/beginner_tutorials
+beginner_tutorials_BINARY_DIR:STATIC=/home/zheng/ros/build/master_thesis
 
 //Value Computed by CMake
-beginner_tutorials_SOURCE_DIR:STATIC=/home/zheng/ros/src/beginner_tutorials
+beginner_tutorials_SOURCE_DIR:STATIC=/home/zheng/ros/src/master_thesis
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/indigo/share/catkin/cmake
+
+//Value Computed by CMake
+cfclient_BINARY_DIR:STATIC=/home/zheng/ros/build/crazyflie-clients-python
+
+//Value Computed by CMake
+cfclient_SOURCE_DIR:STATIC=/home/zheng/ros/src/crazyflie-clients-python
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
