@@ -9,7 +9,7 @@
   <arg name="enable_cf2" value="0" />
   <arg name="enable_cf3" value="0" />
   <arg name="enable_dis_obs" default="False" />
-  <arg name="enable_logging" default="False" />
+  <arg name="enable_logging" default="True" />
 
   <arg name="ns0" value="crazyflie0" />
   <arg name="ns1" value="crazyflie1" /> 
@@ -38,7 +38,7 @@
   
  <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns0)" if="$(arg enable_cf0)">
     <arg name="ns" value="$(arg ns0)"/>
-    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E0" />
+    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E2" />
     <arg name="tf_prefix" value="$(arg ns0)"/>
     <arg name="enable_logging" value="$(arg enable_logging)"/>
     <arg name="frame" value="base_link"/>
@@ -71,8 +71,9 @@
   <!-- run rviz -->
   <param name="robot_description" command="$(find xacro)/xacro.py $(find crazyflie_description)/urdf/crazyflie2.urdf.xacro" />
   <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyflie_demo)/launch/crazyflie_pos.rviz" required="true" /> -->
- 
+   
   <include file="$(find vicon_bridge)/launch/vicon.launch" />
+  <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" />
 </launch>
 
 

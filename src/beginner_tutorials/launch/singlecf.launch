@@ -13,17 +13,21 @@
       <param name="tf_prefix" value="$(arg tf_prefix)" />
       <param name="enable_logging" value="$(arg enable_logging)" /> 
       <rosparam>
-          genericLogTopics: ["state"]
-          genericLogTopicFrequencies: [10]
+          genericLogTopics: ["state","setpoint","errors","finalControl","Fd"]
+          genericLogTopicFrequencies: [10,1,1,10,1]
           genericLogTopic_state_Variables: ["kalman.stateX", "kalman.stateY", "kalman.stateZ", "stabilizer.roll", "stabilizer.pitch", "stabilizer.yaw"]
+          genericLogTopic_setpoint_Variables: ["reference.roll", "reference.pitch", "reference.yaw"]
+          genericLogTopic_errors_Variables: ["errors.r02", "errors.r12", "errors.r22"] <!--["errors.rx", "errors.ry", "errors.rz", "errors.r02","errors.r12","errors.r22"]-->
+          genericLogTopic_finalControl_Variables: ["finalControl.thrust","finalControl.pwm3", "finalControl.omegasq3","finalControl.power3","finalControl.torquex","finalControl.torquey","finalControl.torquez"]
+          genericLogTopic_Fd_Variables: ["Fd.Fd0","Fd.Fd1", "Fd.Fd2"]
       </rosparam>
     </node>
     <node name="crazyflie_state" pkg="beginner_tutorials" type="crazyflie_state_broadcaster.py" output="screen">
         <param name="frame" value="$(arg frame)"/>
         <param name="worldFrame" value="$(arg worldFrame)"/>
     </node>
-
-    <node name="basic_controller" pkg="beginner_tutorials" type="basic_controller.py" output="screen">
+    
+    <node name="basic_controller" pkg="beginner_tutorials" type="new_controller.py" output="screen">
         <param name="frame" value="$(arg ns)/$(arg worldFrame)"/>
         <param name="worldFrame" value="$(arg worldFrame)" />
         <param name="joy_topic" value="/joy" />
