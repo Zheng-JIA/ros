@@ -107,7 +107,7 @@ def convert_to_rviz_tf(msg, kf):
         # measurement update
         if num_marker == num_quad:
             kf[i].measu_update(pos)
-        br.sendTransform(kf[i].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie"+str(i)+"/base_link","world") # unknown reason for affecting system
+        #br.sendTransform(kf[i].get_pos(), tf.transformations.quaternion_from_euler(0,0,0), rospy.Time.now(),"crazyflie"+str(i)+"/base_link","world") # unknown reason for affecting system
     #==================================Publish tracked positions=========================================== 
     global enable_dis_obs
     for i in range(0, num_quad):

@@ -1,8 +1,0 @@
-prefix=/home/zheng/ros/devel
-
-Name: cfclient
-Description: Description of cfclient
-Version: 2014.04.9001
-Cflags: 
-Libs: -L/home/zheng/ros/devel/lib 
-Requires: 

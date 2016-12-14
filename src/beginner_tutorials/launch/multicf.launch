@@ -38,7 +38,7 @@
   
  <include file="$(find beginner_tutorials)/launch/singlecf.launch" ns="$(arg ns0)" if="$(arg enable_cf0)">
     <arg name="ns" value="$(arg ns0)"/>
-    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E2" />
+    <arg name="uri" value="radio://0/80/2M/E7E7E7E7E3" />
     <arg name="tf_prefix" value="$(arg ns0)"/>
     <arg name="enable_logging" value="$(arg enable_logging)"/>
     <arg name="frame" value="base_link"/>
@@ -70,10 +70,16 @@
    </include>
   <!-- run rviz -->
   <param name="robot_description" command="$(find xacro)/xacro.py $(find crazyflie_description)/urdf/crazyflie2.urdf.xacro" />
-  <!--<node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyflie_demo)/launch/crazyflie_pos.rviz" required="true" /> -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find crazyflie_demo)/launch/crazyflie_pos.rviz" required="true" />
    
   <include file="$(find vicon_bridge)/launch/vicon.launch" />
-  <node name="rqt_plot" pkg="rqt_plot" type="rqt_plot" />
+  <node name="rqt_plot_roll" pkg="rqt_plot" type="rqt_plot" args="/crazyflie0/errors/values[0]  /crazyflie0/state/values[3] /crazyflie0/setpoint/values[0]"/> <!--/crazyflie0/finalControl/values[4] -->
+  <node name="rqt_plot_pitch" pkg="rqt_plot" type="rqt_plot" args="/crazyflie0/errors/values[1] /crazyflie0/state/values[4] /crazyflie0/setpoint/values[1]"/>
+  <node name="rqt_plot_yaw" pkg="rqt_plot" type="rqt_plot" args="/crazyflie0/errors/values[2] /crazyflie0/state/values[5] /crazyflie0/setpoint/values[2]"/> 
+  <!--<node name="rqt_plot_omegasq2" pkg="rqt_plot" type="rqt_plot" args="/crazyflie0/finalControl/values[0] /crazyflie0/finalControl/values[1] /crazyflie0/finalControl/values[2] /crazyflie0/finalControl/values[3]"/> -->
+
+  <node name="visualize_vector" pkg="beginner_tutorials" type="visualization_vector.py" output="screen"/>
+  
 </launch>
 
 

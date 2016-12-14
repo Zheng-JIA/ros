@@ -13,13 +13,15 @@
       <param name="tf_prefix" value="$(arg tf_prefix)" />
       <param name="enable_logging" value="$(arg enable_logging)" /> 
       <rosparam>
-          genericLogTopics: ["state","setpoint","errors","finalControl","Fd"]
-          genericLogTopicFrequencies: [10,1,1,10,1]
+          genericLogTopics: ["state","setpoint","errors","finalControl","Fd","stateVel"]
+          genericLogTopicFrequencies: [10,10,10,10,10,20]
           genericLogTopic_state_Variables: ["kalman.stateX", "kalman.stateY", "kalman.stateZ", "stabilizer.roll", "stabilizer.pitch", "stabilizer.yaw"]
-          genericLogTopic_setpoint_Variables: ["reference.roll", "reference.pitch", "reference.yaw"]
-          genericLogTopic_errors_Variables: ["errors.r02", "errors.r12", "errors.r22"] <!--["errors.rx", "errors.ry", "errors.rz", "errors.r02","errors.r12","errors.r22"]-->
-          genericLogTopic_finalControl_Variables: ["finalControl.thrust","finalControl.pwm3", "finalControl.omegasq3","finalControl.power3","finalControl.torquex","finalControl.torquey","finalControl.torquez"]
+          genericLogTopic_setpoint_Variables: ["reference.rolld", "reference.pitchd", "reference.yawd"]
+          genericLogTopic_errors_Variables: ["errors.rx", "errors.ry", "errors.rz"] <!--["errors.rx", "errors.ry", "errors.rz", "errors.r02","errors.r12","errors.r22"]-->
+          <!--genericLogTopic_finalControl_Variables: ["finalControl.thrust","finalControl.pwm3", "finalControl.omegasq3","finalControl.power3","finalControl.torquex","finalControl.torquey","finalControl.torquez"]-->
+          genericLogTopic_finalControl_Variables: ["finalControl.power0","finalControl.omegasq0", "finalControl.thrust"]
           genericLogTopic_Fd_Variables: ["Fd.Fd0","Fd.Fd1", "Fd.Fd2"]
+          genericLogTopic_stateVel_Variables: ["stabilizer.velx","stabilizer.vely", "stabilizer.velz"]
       </rosparam>
     </node>
     <node name="crazyflie_state" pkg="beginner_tutorials" type="crazyflie_state_broadcaster.py" output="screen">
@@ -27,7 +29,7 @@
         <param name="worldFrame" value="$(arg worldFrame)"/>
     </node>
     
-    <node name="basic_controller" pkg="beginner_tutorials" type="new_controller.py" output="screen">
+    <node name="new_controller" pkg="beginner_tutorials" type="new_controller.py" output="screen">
         <param name="frame" value="$(arg ns)/$(arg worldFrame)"/>
         <param name="worldFrame" value="$(arg worldFrame)" />
         <param name="joy_topic" value="/joy" />
