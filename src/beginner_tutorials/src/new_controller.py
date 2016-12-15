@@ -64,9 +64,15 @@ class Controller():
 
                 # TAKEOFF
                 elif self._nextstate == 2:
-                    start = rospy.get_time()
+                    starttime = rospy.Time.now()
                     #self._home = self._state[0:3]
                     print("takeoff from {}".format(self._home))
+
+                # LANDING
+                elif self._nextstate == 3:
+                    starttime = rospy.Time.now()
+                    self._home = self._state[0:3]
+                    print("landing...")
  
             self._laststate = self._nextstate
 
@@ -82,6 +88,16 @@ class Controller():
                 cmd_fullcontrol.x[0] = self._home[0]
                 cmd_fullcontrol.y[0] = self._home[1]
                 cmd_fullcontrol.z[0] = self._home[2] + 1.2
+
+            # LANDING
+            elif self._nextstate == 3: 
+                dt = (rospy.Time.now()-starttime).to_sec()
+                cmd_fullcontrol.x[0] = self._home[0]
+                cmd_fullcontrol.y[0] = self._home[1]
+                cmd_fullcontrol.z[0] = max(0.25, self._home[2] - self._home[2]*dt/2)
+
+                if dt > 2:
+                    self._nextstate = 0
               
             self._cmdvel_pub.publish(cmd)
             self._cmdfullcontrol_pub.publish(cmd_fullcontrol)
@@ -98,6 +114,10 @@ class Controller():
                 if i == 2 and data.buttons[i] == 1:
                     self._nextstate = 2
                     rospy.loginfo("next state is hovering")
+                # LANDING
+                if i == 3 and data.buttons[i] == 1:
+                    self._nextstate = 3
+                    rospy.loginfo("next state is landing")
                 # ENABLE POWER
                 if i == 8 and data.buttons[i] == 1:
                     rospy.set_param("enable_power/enable_power", 1)
@@ -114,6 +134,8 @@ class Controller():
                     SE3_xkw = 0.000025 # 0.0000175 
                     SE3_zkr = 0.007 # 0.0023
                     SE3_zkw = 0.000021 # 0.00001
+                    SE3_kp = 0.2
+                    SE3_kd = 0.1
 
                     rospy.set_param("kalman/resetEstimation", data.buttons[i])
                     self._update_params(["kalman/resetEstimation"])
@@ -127,9 +149,9 @@ class Controller():
                     rospy.set_param("SE3_K/SE3_zkw", SE3_zkw)
                     self._update_params(["SE3_K/SE3_zkw"])
 
-                    rospy.set_param("SE3_K/SE3_kp", 0.2) #0.09 0.3
+                    rospy.set_param("SE3_K/SE3_kp", SE3_kp) #0.09 0.3
                     self._update_params(["SE3_K/SE3_kp"])
-                    rospy.set_param("SE3_K/SE3_kd", 0.08) # 0.0003 0.0023
+                    rospy.set_param("SE3_K/SE3_kd", SE3_kd) # 0.0003 0.0023
                     self._update_params(["SE3_K/SE3_kd"]) # 0.012
 
         self._buttons = data.buttons
