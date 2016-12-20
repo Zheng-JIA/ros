@@ -22,7 +22,7 @@ def pub_marker(msg):
     start.z = pos[2]
     end.x = start.x + 10*msg.values[0]
     end.y = start.y + 10*msg.values[1]
-    end.z = start.z + 10*msg.values[2]
+    end.z = start.z + 10*(msg.values[2] - 0.28)
     marker.points.append(start)
     marker.points.append(end)
     marker.scale.x = 0.05
